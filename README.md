@@ -41,7 +41,7 @@ Follow these steps to get the project up and running on your local machine.
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/dis70rt/gocatalog
+   git clone https://github.com/dis70rt/GoCatalog
    cd GoCatalog
    ```
 2. **Configure Environment**
