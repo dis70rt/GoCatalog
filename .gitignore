@@ -1,0 +1,13 @@
+/go.sum
+/go.mod
+
+.vscode/
+
+*.env
+*.env.test
+pgdata/
+
+*.log
+
+docker-compose.yml
+ToDo

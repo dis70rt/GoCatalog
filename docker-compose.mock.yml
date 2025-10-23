@@ -1,0 +1,52 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    user: "999"
+    environment:
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+      POSTGRES_DB: test_db
+      POSTGRES_HOST: postgres-mock
+      POSTGRES_PORT: 5432
+    ports:
+      - "5432:5432"
+    networks:
+      - psql
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - tmp_volume:/temp
+  
+  streamoid-api:
+    build:
+      context: .
+      dockerfile: DockerFile
+    container_name: api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      API_ENV: TEST
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+      POSTGRES_DB: test_db
+      POSTGRES_HOST: postgres-mock
+      POSTGRES_PORT: 5432
+    networks:
+      - psql
+    volumes:
+      - tmp_volume:/temp
+
+networks:
+  psql:
+    driver: bridge
+
+volumes:
+  pgdata:
+  tmp_volume:
+
+
+
+
+

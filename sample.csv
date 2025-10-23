@@ -1,0 +1,5 @@
+sku,name,brand,color,size,mrp,price,quantity
+TSHIRT-RED-001,Classic Cotton T-Shirt,StreamThreads,Red,M,799,499,5
+TSHIRT-BLK-002,Classic Cotton T-Shirt,StreamThreads,Black,L,799,549,12
+INVALID-002,Graphic Tee,UrbanEdge,Grey,S,899,999,15
+INVALID-003,Slim Fit Jeans,DenimWorks,Black,32,1999,1599,-2
